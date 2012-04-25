@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               WWW-Session
-version:            0.02
+version:            0.03
 abstract:           WWW Sessions with multiple backends
 author:
     - Gligan Calin Horea <gliganh@gmail.com>
