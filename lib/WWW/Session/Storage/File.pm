@@ -10,11 +10,11 @@ WWW::Session::Storage::File - File storage engine for WWW::Session
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 =head1 SYNOPSIS
@@ -49,7 +49,7 @@ sub new {
     
     die "You must specify the path where to save the sessions!" unless defined $params->{path};
     
-    die "The specified path does not exist" unless -d $params->{path};
+    die "Cannot save sessions in folder '".$params->{path}."' because the folder does not exist!" unless -d $params->{path};
     
     my $self = {
                 path => $params->{path}

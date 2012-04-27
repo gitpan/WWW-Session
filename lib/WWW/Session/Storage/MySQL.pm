@@ -10,11 +10,11 @@ WWW::Session::Storage::MySQL - MySQL storage for WWW::Session
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 
 =head1 SYNOPSIS
@@ -39,6 +39,22 @@ Usage :
     $storage->save($session_id,$expires,$serialized_data);
     
     my $serialized_data = $storage->retrive($session_id);
+
+
+The "fields" hasref contains the mapping of session internal data to the column names from MySQL. 
+The keys are the session fields ("sid","expires" and "data") and must all be present. 
+
+The MySQL types of the columns should be :
+
+=over 4
+
+=item * sid => varchar(32)
+
+=item * expires => DATETIME or TIMESTAMP
+
+=item * data => text
+
+=back
 
 =head1 SUBROUTINES/METHODS
 
