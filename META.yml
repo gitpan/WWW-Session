@@ -1,7 +1,7 @@
 --- #YAML:1.0
 name:               WWW-Session
-version:            0.05
-abstract:           WWW Sessions with multiple backends
+version:            0.06
+abstract:           WWW Sessions with multiple backends and object serialization
 author:
     - Gligan Calin Horea <gliganh@gmail.com>
 license:            perl
