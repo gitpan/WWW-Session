@@ -8,13 +8,17 @@ use warnings;
 
 WWW::Session - WWW Sessions with multiple backends and object serialization
 
+=head1 DESCRIPTION
+
+Generic session management engine for web applications
+
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 =head1 SYNOPSIS
 

@@ -1,26 +1,26 @@
---- #YAML:1.0
-name:               WWW-Session
-version:            0.07
-abstract:           WWW Sessions with multiple backends and object serialization
+---
+abstract: 'WWW Sessions with multiple backends and object serialization'
 author:
-    - Gligan Calin Horea <gliganh@gmail.com>
-license:            perl
-distribution_type:  module
-configure_requires:
-    ExtUtils::MakeMaker:  0
+  - 'Gligan Calin Horea <gliganh@gmail.com>'
 build_requires:
-    ExtUtils::MakeMaker:  0
-requires:
-    JSON:             0
-    Storable:         0
-    Test::Deep:       0
-    Test::Exception:  0
-    Test::More:       0
-no_index:
-    directory:
-        - t
-        - inc
-generated_by:       ExtUtils::MakeMaker version 6.57_05
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.130880'
+license: perl
 meta-spec:
-    url:      http://module-build.sourceforge.net/META-spec-v1.4.html
-    version:  1.4
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: WWW-Session
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  JSON: 0
+  Storable: 0
+  Test::Deep: 0
+  Test::Exception: 0
+  Test::More: 0
+version: 0.08

@@ -8,13 +8,17 @@ use warnings;
 
 WWW::Session::Storage::MySQL - MySQL storage for WWW::Session
 
+=head1 DESCRIPTION
+
+MySQL backend for WWW:Session
+
 =head1 VERSION
 
-Version 0.07
+Version 0.08
 
 =cut
 
-our $VERSION = '0.07';
+our $VERSION = '0.08';
 
 
 =head1 SYNOPSIS
@@ -110,13 +114,17 @@ Stores the given information into the database
 sub save {
     my ($self,$sid,$expires,$string) = @_;
 
-    my $query = sprintf('INSERT INTO %s SET %s=?, %s=?,%s=FROM_UNIXTIME(?)',
+	$expires = 60*60*24*365*20 if $expires == -1;
+
+    my $query = sprintf('INSERT INTO %s SET %s=?, %s=?,%s=FROM_UNIXTIME(?) ON DUPLICATE KEY UPDATE %s=?, %s=FROM_UNIXTIME(?)',
                         $self->{table},
-                        @{$self->{fields}}{qw(sid data expires)}
+                        @{$self->{fields}}{qw(sid data expires)},
+						@{$self->{fields}}{qw(data expires)}
                         );
 
     my $sth = $self->{dbh}->prepare($query);
-    my $rv = $sth->execute($sid,$string,time() + ( $expires == -1 ? 60*60*24*365*20 : $expires ) );
+
+    my $rv = $sth->execute($sid,$string,time() + $expires, $string,time() + $expires);
     
     return $rv;
 }
