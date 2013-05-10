@@ -6,19 +6,20 @@ use warnings;
 
 =head1 NAME
 
-WWW::Session - WWW Sessions with multiple backends and object serialization
+WWW::Session - Generic session management engine for web applications
 
 =head1 DESCRIPTION
 
-Generic session management engine for web applications
+Generic session management engine for web applications with multiple backends, 
+object serialization and data validation
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 =cut
 
-our $VERSION = '0.08';
+our $VERSION = '0.09';
 
 =head1 SYNOPSIS
 
@@ -443,6 +444,7 @@ Usage :
 sub delete {
     my ($self,$key) = @_;
     
+    $self->{changed}->{$key} = 1;
     return delete $self->{data}->{$key};
 }
 

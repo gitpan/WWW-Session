@@ -1,10 +1,10 @@
 {
-   "abstract" : "WWW Sessions with multiple backends and object serialization",
+   "abstract" : "Generic session management engine for web applications",
    "author" : [
       "Gligan Calin Horea <gliganh@gmail.com>"
    ],
    "dynamic_config" : 1,
-   "generated_by" : "ExtUtils::MakeMaker version 6.64, CPAN::Meta::Converter version 2.130880",
+   "generated_by" : "ExtUtils::MakeMaker version 6.6302, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -41,5 +41,5 @@
       }
    },
    "release_status" : "stable",
-   "version" : "0.08"
+   "version" : "0.09"
 }

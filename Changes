@@ -21,3 +21,5 @@ Revision history for WWW-Session
 0.08	2013-04-24
 		Fixed bug in MySQL backend
 		Added description for all modules
+0.09	2013-05-10
+		Delete correctly registers a change so autosave can do it's job
