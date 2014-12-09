@@ -19,5 +19,6 @@ t/session-tie.t
 t/storage-file.t
 t/storage-memcached.t
 t/storage-mysql.t
+t/triggers.t
 META.yml                                 Module YAML meta-data (added by MakeMaker)
 META.json                                Module JSON meta-data (added by MakeMaker)
